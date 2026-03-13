@@ -1,0 +1,65 @@
+[project]
+name = "docfusion"
+version = "2.0.0"
+description = "Document intelligence pipeline for the 2026 ML Rihal CodeStacker Challenge"
+readme = "README.md"
+requires-python = ">=3.13"
+license = {text = "MIT"}
+authors = [
+    {name = "DocFusion Team"},
+]
+keywords = ["ocr", "document-intelligence", "anomaly-detection", "receipt-extraction"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Image Recognition",
+]
+dependencies = [
+    "easyocr>=1.7.0",
+    "opencv-python-headless>=4.9.0",
+    "numpy>=1.26.0",
+    "xgboost>=2.1.0",
+    "scikit-learn>=1.5.0",
+    "python-dateutil>=2.9.0",
+    "streamlit>=1.40.0",
+    "Pillow>=10.4.0",
+    "matplotlib>=3.9.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.0",
+    "python-docx>=1.1.0",
+]
+data = [
+    "datasets>=3.0.0",
+    "kaggle>=1.6.0",
+]
+all = [
+    "docfusion[dev,data]",
+]
+
+[project.urls]
+Repository = "https://github.com/YOUR_USERNAME/ML-rihal"
+
+[build-system]
+requires = ["setuptools>=75.0"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[tool.setuptools]
+py-modules = [
+    "solution",
+    "ocr_engine",
+    "field_extractor",
+    "feature_extractor",
+    "anomaly_detector",
+    "utils",
+    "data_loader",
+    "app",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
