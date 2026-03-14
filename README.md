@@ -1,4 +1,5 @@
 # DocFusion: Operation Intelligent Documents
+https://mlrihalchallenge.streamlit.app/ LINK
 
 End-to-end document intelligence pipeline for the **2026 ML Rihal CodeStacker Challenge**.
 Extracts structured fields (vendor, date, total) from scanned receipts and detects
